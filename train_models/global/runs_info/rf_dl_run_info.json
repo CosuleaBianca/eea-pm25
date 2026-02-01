@@ -1,0 +1,84 @@
+{
+  "run_seconds": 3415.77,
+  "tune_sample_n": 60000,
+  "n_iter_search": 10,
+  "cv_splits": 2,
+  "param_space": "PARAM_DISTRIBUTIONS_FAST",
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 878.45,
+      "train_n": 783363,
+      "val_n": 0,
+      "test_n": 375906,
+      "model_path": "models/models_rf_dl/rf_h1.pkl",
+      "best_params": {
+        "n_estimators": 200,
+        "min_samples_split": 2,
+        "min_samples_leaf": 2,
+        "max_features": 1.0,
+        "max_depth": 30,
+        "bootstrap": true
+      }
+    },
+    "h3": {
+      "train_seconds": 180.16,
+      "train_n": 781233,
+      "val_n": 0,
+      "test_n": 374872,
+      "model_path": "models/models_rf_dl/rf_h3.pkl",
+      "best_params": {
+        "n_estimators": 400,
+        "min_samples_split": 5,
+        "min_samples_leaf": 4,
+        "max_features": "sqrt",
+        "max_depth": null,
+        "bootstrap": true
+      }
+    },
+    "h6": {
+      "train_seconds": 106.49,
+      "train_n": 778038,
+      "val_n": 0,
+      "test_n": 373321,
+      "model_path": "models/models_rf_dl/rf_h6.pkl",
+      "best_params": {
+        "n_estimators": 200,
+        "min_samples_split": 2,
+        "min_samples_leaf": 4,
+        "max_features": "sqrt",
+        "max_depth": 40,
+        "bootstrap": true
+      }
+    },
+    "h12": {
+      "train_seconds": 108.25,
+      "train_n": 771648,
+      "val_n": 0,
+      "test_n": 370219,
+      "model_path": "models/models_rf_dl/rf_h12.pkl",
+      "best_params": {
+        "n_estimators": 200,
+        "min_samples_split": 2,
+        "min_samples_leaf": 4,
+        "max_features": "sqrt",
+        "max_depth": 40,
+        "bootstrap": true
+      }
+    },
+    "h24": {
+      "train_seconds": 103.97,
+      "train_n": 758868,
+      "val_n": 0,
+      "test_n": 364015,
+      "model_path": "models/models_rf_dl/rf_h24.pkl",
+      "best_params": {
+        "n_estimators": 200,
+        "min_samples_split": 2,
+        "min_samples_leaf": 4,
+        "max_features": "sqrt",
+        "max_depth": 40,
+        "bootstrap": true
+      }
+    }
+  }
+}

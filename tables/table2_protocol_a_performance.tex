@@ -1,0 +1,37 @@
+\begin{table}[htbp]
+\centering
+\caption{Protocol A: Global performance metrics across prediction horizons. Lower MAE/RMSE and higher R² indicate better performance. Bias shows systematic over/under-prediction (positive = over-prediction). Note: Under Protocol A, sample counts are identical across models for each horizon; therefore Count is reported once at the bottom.}
+\label{tab:protocol_a_performance}
+\begin{tabular}{llrrrrr}
+\toprule
+Model & Metric & h=1 & h=3 & h=6 & h=12 & h=24 \\
+\midrule
+\multirow{4}{*}{Persistence} & MAE & 1.50 & 2.64 & 3.56 & 4.38 & 4.74 \\
+ & RMSE & 2.64 & 4.29 & 5.58 & 6.67 & 7.24 \\
+ & R² & 0.872 & 0.663 & 0.431 & 0.186 & 0.042 \\
+ & Bias & -0.00 & -0.01 & -0.01 & -0.01 & -0.02 \\
+\multirow{4}{*}{Linear Regression} & MAE & 1.49 & 2.50 & 3.20 & 3.73 & 4.12 \\
+ & RMSE & 2.51 & 3.89 & 4.81 & 5.53 & 6.04 \\
+ & R² & 0.885 & 0.723 & 0.576 & 0.440 & 0.333 \\
+ & Bias & -0.01 & -0.07 & -0.15 & -0.24 & -0.34 \\
+\multirow{4}{*}{GAM} & MAE & 1.49 & 2.48 & 3.18 & 3.72 & 4.09 \\
+ & RMSE & 2.50 & 3.85 & 4.78 & 5.53 & 6.03 \\
+ & R² & 0.886 & 0.729 & 0.583 & 0.441 & 0.336 \\
+ & Bias & -0.07 & -0.22 & -0.41 & -0.61 & -0.48 \\
+\multirow{4}{*}{Random Forest} & MAE & 1.44 & 2.45 & 3.12 & 3.67 & 4.13 \\
+ & RMSE & 2.47 & 3.81 & 4.68 & 5.38 & 5.96 \\
+ & R² & 0.889 & 0.735 & 0.600 & 0.470 & 0.351 \\
+ & Bias & 0.08 & 0.18 & 0.29 & 0.36 & 0.44 \\
+\multirow{4}{*}{XGBoost} & MAE & 1.44 & 2.41 & 3.14 & 3.66 & 4.08 \\
+ & RMSE & \textbf{2.43} & 3.75 & 4.70 & 5.38 & \textbf{5.93} \\
+ & R² & 0.892 & 0.743 & 0.596 & 0.470 & 0.358 \\
+ & Bias & 0.04 & 0.10 & 0.23 & 0.27 & 0.27 \\
+\multirow{4}{*}{LightGBM} & MAE & 1.44 & 2.31 & 2.95 & 3.56 & 4.19 \\
+ & RMSE & 2.45 & \textbf{3.64} & \textbf{4.49} & \textbf{5.26} & 6.06 \\
+ & R² & 0.890 & 0.758 & 0.632 & 0.494 & 0.329 \\
+ & Bias & 0.04 & 0.09 & 0.14 & 0.18 & 0.31 \\
+\midrule
+\multicolumn{2}{l}{Count (N)} & 606,635 & 601,349 & 599,587 & 597,887 & 592,961 \\
+\bottomrule
+\end{tabular}
+\end{table}

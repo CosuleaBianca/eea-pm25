@@ -1,0 +1,33 @@
+{
+  "model_name": "persistence",
+  "horizons": [
+    1,
+    3,
+    6,
+    12,
+    24
+  ],
+  "per_horizon": {
+    "1": {
+      "horizon_seconds": 1.8495302200317383,
+      "test_n": 606635
+    },
+    "3": {
+      "horizon_seconds": 1.5772221088409424,
+      "test_n": 601349
+    },
+    "6": {
+      "horizon_seconds": 1.4603214263916016,
+      "test_n": 599587
+    },
+    "12": {
+      "horizon_seconds": 1.7861719131469727,
+      "test_n": 597887
+    },
+    "24": {
+      "horizon_seconds": 1.8992459774017334,
+      "test_n": 592961
+    }
+  },
+  "run_seconds": 94.0562355518341
+}

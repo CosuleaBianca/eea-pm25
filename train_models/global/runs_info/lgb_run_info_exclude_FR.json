@@ -1,0 +1,46 @@
+{
+  "run_seconds": 10100.89,
+  "excluded_country": "FR",
+  "tune_train_sample_n": 120000,
+  "tune_val_sample_n": 120000,
+  "n_candidates": 10,
+  "early_stopping_rounds": 200,
+  "max_estimators": 20000,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 1130.26,
+      "train_n": 1132484,
+      "val_n": 0,
+      "test_n": 606635,
+      "model_path": "models/models_lgb_exclude_FR/lgb_h1.pkl"
+    },
+    "h3": {
+      "train_seconds": 914.75,
+      "train_n": 1122577,
+      "val_n": 0,
+      "test_n": 601349,
+      "model_path": "models/models_lgb_exclude_FR/lgb_h3.pkl"
+    },
+    "h6": {
+      "train_seconds": 908.66,
+      "train_n": 1119717,
+      "val_n": 0,
+      "test_n": 599587,
+      "model_path": "models/models_lgb_exclude_FR/lgb_h6.pkl"
+    },
+    "h12": {
+      "train_seconds": 788.82,
+      "train_n": 1117380,
+      "val_n": 0,
+      "test_n": 597887,
+      "model_path": "models/models_lgb_exclude_FR/lgb_h12.pkl"
+    },
+    "h24": {
+      "train_seconds": 718.85,
+      "train_n": 1110830,
+      "val_n": 0,
+      "test_n": 592961,
+      "model_path": "models/models_lgb_exclude_FR/lgb_h24.pkl"
+    }
+  }
+}

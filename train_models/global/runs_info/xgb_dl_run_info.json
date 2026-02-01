@@ -1,0 +1,49 @@
+{
+  "run_seconds": 1425.41,
+  "tune_sample_n": 120000,
+  "n_iter_search": 20,
+  "cv_splits": 3,
+  "early_stopping_rounds": 50,
+  "per_horizon": {
+    "h1": {
+      "tuning_seconds": 225.76,
+      "train_seconds": 30.3,
+      "train_n": 783363,
+      "val_n": 0,
+      "test_n": 375906,
+      "model_path": "models/xgb_dl_models/xgb_h1.pkl"
+    },
+    "h3": {
+      "tuning_seconds": 221.45,
+      "train_seconds": 22.29,
+      "train_n": 781233,
+      "val_n": 0,
+      "test_n": 374872,
+      "model_path": "models/xgb_dl_models/xgb_h3.pkl"
+    },
+    "h6": {
+      "tuning_seconds": 234.04,
+      "train_seconds": 22.21,
+      "train_n": 778038,
+      "val_n": 0,
+      "test_n": 373321,
+      "model_path": "models/xgb_dl_models/xgb_h6.pkl"
+    },
+    "h12": {
+      "tuning_seconds": 231.22,
+      "train_seconds": 25.2,
+      "train_n": 771648,
+      "val_n": 0,
+      "test_n": 370219,
+      "model_path": "models/xgb_dl_models/xgb_h12.pkl"
+    },
+    "h24": {
+      "tuning_seconds": 236.29,
+      "train_seconds": 12.17,
+      "train_n": 758868,
+      "val_n": 0,
+      "test_n": 364015,
+      "model_path": "models/xgb_dl_models/xgb_h24.pkl"
+    }
+  }
+}

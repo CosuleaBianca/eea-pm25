@@ -1,0 +1,43 @@
+{
+  "run_seconds": 7101.64,
+  "tune_train_sample_n": 50000,
+  "tune_val_sample_n": 50000,
+  "param_grid_size": 6,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 663.2,
+      "train_n": 1058113,
+      "val_n": 0,
+      "test_n": 91018,
+      "model_path": "models/models_gam_dl_split_2/gam_dl_h1.pkl"
+    },
+    "h3": {
+      "train_seconds": 1523.58,
+      "train_n": 1055211,
+      "val_n": 0,
+      "test_n": 90792,
+      "model_path": "models/models_gam_dl_split_2/gam_dl_h3.pkl"
+    },
+    "h6": {
+      "train_seconds": 1299.79,
+      "train_n": 1050858,
+      "val_n": 0,
+      "test_n": 90453,
+      "model_path": "models/models_gam_dl_split_2/gam_dl_h6.pkl"
+    },
+    "h12": {
+      "train_seconds": 1133.52,
+      "train_n": 1042152,
+      "val_n": 0,
+      "test_n": 89775,
+      "model_path": "models/models_gam_dl_split_2/gam_dl_h12.pkl"
+    },
+    "h24": {
+      "train_seconds": 344.85,
+      "train_n": 1024740,
+      "val_n": 0,
+      "test_n": 88419,
+      "model_path": "models/models_gam_dl_split_2/gam_dl_h24.pkl"
+    }
+  }
+}

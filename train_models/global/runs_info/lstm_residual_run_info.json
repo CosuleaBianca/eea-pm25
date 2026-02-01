@@ -1,0 +1,40 @@
+{
+  "run_seconds": 165630.98,
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h1": {
+      "fit_seconds": 21368.04,
+      "epochs_run": 26,
+      "test_n": 375906,
+      "model_path": "models/lstm_residual_single_models/lstm_residual_h1.keras"
+    },
+    "h3": {
+      "fit_seconds": 36311.97,
+      "epochs_run": 44,
+      "test_n": 374872,
+      "model_path": "models/lstm_residual_single_models/lstm_residual_h3.keras"
+    },
+    "h6": {
+      "fit_seconds": 36104.59,
+      "epochs_run": 44,
+      "test_n": 373321,
+      "model_path": "models/lstm_residual_single_models/lstm_residual_h6.keras"
+    },
+    "h12": {
+      "fit_seconds": 39223.29,
+      "epochs_run": 47,
+      "test_n": 370219,
+      "model_path": "models/lstm_residual_single_models/lstm_residual_h12.keras"
+    },
+    "h24": {
+      "fit_seconds": 31848.79,
+      "epochs_run": 42,
+      "test_n": 364015,
+      "model_path": "models/lstm_residual_single_models/lstm_residual_h24.keras"
+    }
+  }
+}

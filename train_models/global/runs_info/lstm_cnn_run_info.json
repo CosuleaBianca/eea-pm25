@@ -1,0 +1,50 @@
+{
+  "run_seconds": 156215.05,
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 24122.51,
+      "train_n": 784601,
+      "val_n": 100436,
+      "test_n": 376476,
+      "model_path": "models/lstm_cnn_models/lstm_cnn_h1.keras",
+      "history_path": "train_models/history/lstm_cnn_histories/train_curve_h1.csv"
+    },
+    "h3": {
+      "train_seconds": 34397.42,
+      "train_n": 782295,
+      "val_n": 100174,
+      "test_n": 375349,
+      "model_path": "models/lstm_cnn_models/lstm_cnn_h3.keras",
+      "history_path": "train_models/history/lstm_cnn_histories/train_curve_h3.csv"
+    },
+    "h6": {
+      "train_seconds": 29002.17,
+      "train_n": 780219,
+      "val_n": 99928,
+      "test_n": 374354,
+      "model_path": "models/lstm_cnn_models/lstm_cnn_h6.keras",
+      "history_path": "train_models/history/lstm_cnn_histories/train_curve_h6.csv"
+    },
+    "h12": {
+      "train_seconds": 34334.64,
+      "train_n": 777751,
+      "val_n": 99621,
+      "test_n": 373092,
+      "model_path": "models/lstm_cnn_models/lstm_cnn_h12.keras",
+      "history_path": "train_models/history/lstm_cnn_histories/train_curve_h12.csv"
+    },
+    "h24": {
+      "train_seconds": 34355.18,
+      "train_n": 774838,
+      "val_n": 99239,
+      "test_n": 371472,
+      "model_path": "models/lstm_cnn_models/lstm_cnn_h24.keras",
+      "history_path": "train_models/history/lstm_cnn_histories/train_curve_h24.csv"
+    }
+  }
+}

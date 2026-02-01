@@ -1,0 +1,40 @@
+{
+  "run_seconds": 3095.16,
+  "tune_train_sample_n": 120000,
+  "tune_val_sample_n": 120000,
+  "n_candidates": 10,
+  "early_stopping_rounds": 200,
+  "max_estimators": 20000,
+  "per_horizon": {
+    "h1": {
+      "fit_seconds": 569.94,
+      "train_n": 1307471,
+      "test_n": 606635,
+      "model_path": "models/models_lgb/lgb_h1.pkl"
+    },
+    "h3": {
+      "fit_seconds": 535.23,
+      "train_n": 1293926,
+      "test_n": 601349,
+      "model_path": "models/models_lgb/lgb_h3.pkl"
+    },
+    "h6": {
+      "fit_seconds": 434.59,
+      "train_n": 1290001,
+      "test_n": 599587,
+      "model_path": "models/models_lgb/lgb_h6.pkl"
+    },
+    "h12": {
+      "fit_seconds": 422.74,
+      "train_n": 1286533,
+      "test_n": 597887,
+      "model_path": "models/models_lgb/lgb_h12.pkl"
+    },
+    "h24": {
+      "fit_seconds": 414.2,
+      "train_n": 1276519,
+      "test_n": 592961,
+      "model_path": "models/models_lgb/lgb_h24.pkl"
+    }
+  }
+}

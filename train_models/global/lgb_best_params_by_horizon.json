@@ -1,0 +1,52 @@
+{
+  "h1": {
+    "subsample": 0.6,
+    "reg_lambda": 0.0,
+    "reg_alpha": 0.0,
+    "num_leaves": 255,
+    "min_child_samples": 100,
+    "max_depth": 8,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.8
+  },
+  "h3": {
+    "subsample": 0.6,
+    "reg_lambda": 0.5,
+    "reg_alpha": 0.0,
+    "num_leaves": 127,
+    "min_child_samples": 20,
+    "max_depth": 16,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.6
+  },
+  "h6": {
+    "subsample": 1.0,
+    "reg_lambda": 0.5,
+    "reg_alpha": 0.1,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "max_depth": 12,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.6
+  },
+  "h12": {
+    "subsample": 1.0,
+    "reg_lambda": 0.5,
+    "reg_alpha": 0.1,
+    "num_leaves": 63,
+    "min_child_samples": 20,
+    "max_depth": 12,
+    "learning_rate": 0.01,
+    "colsample_bytree": 0.6
+  },
+  "h24": {
+    "subsample": 0.6,
+    "reg_lambda": 0.5,
+    "reg_alpha": 0.0,
+    "num_leaves": 31,
+    "min_child_samples": 20,
+    "max_depth": 12,
+    "learning_rate": 0.03,
+    "colsample_bytree": 0.8
+  }
+}

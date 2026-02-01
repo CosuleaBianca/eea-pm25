@@ -1,0 +1,50 @@
+{
+  "run_seconds": 123243.13,
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 19571.47,
+      "train_n": 784599,
+      "val_n": 100436,
+      "test_n": 376471,
+      "model_path": "models/lstm_attention_models/lstm_attention_h1.keras",
+      "history_path": "train_models/history/lstm_attention_histories/history_h1.csv"
+    },
+    "h3": {
+      "train_seconds": 26944.06,
+      "train_n": 782290,
+      "val_n": 100172,
+      "test_n": 375344,
+      "model_path": "models/lstm_attention_models/lstm_attention_h3.keras",
+      "history_path": "train_models/history/lstm_attention_histories/history_h3.csv"
+    },
+    "h6": {
+      "train_seconds": 25504.7,
+      "train_n": 780191,
+      "val_n": 99927,
+      "test_n": 374336,
+      "model_path": "models/lstm_attention_models/lstm_attention_h6.keras",
+      "history_path": "train_models/history/lstm_attention_histories/history_h6.csv"
+    },
+    "h12": {
+      "train_seconds": 25166.57,
+      "train_n": 777601,
+      "val_n": 99615,
+      "test_n": 373012,
+      "model_path": "models/lstm_attention_models/lstm_attention_h12.keras",
+      "history_path": "train_models/history/lstm_attention_histories/history_h12.csv"
+    },
+    "h24": {
+      "train_seconds": 25949.21,
+      "train_n": 773977,
+      "val_n": 99123,
+      "test_n": 371089,
+      "model_path": "models/lstm_attention_models/lstm_attention_h24.keras",
+      "history_path": "train_models/history/lstm_attention_histories/history_h24.csv"
+    }
+  }
+}

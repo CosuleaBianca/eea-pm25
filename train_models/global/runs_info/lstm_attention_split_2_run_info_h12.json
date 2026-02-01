@@ -1,0 +1,18 @@
+{
+  "run_seconds": 9308.15,
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h12": {
+      "train_seconds": 9256.11,
+      "train_n": 1042152,
+      "val_n": 47809,
+      "test_n": 89775,
+      "model_path": "models/lstm_attention_split_2_models/lstm_attention_split_2_h12.keras",
+      "history_path": "train_models/history/lstm_attention_split_2_histories/history_h12.csv"
+    }
+  }
+}

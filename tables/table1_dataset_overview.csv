@@ -1,0 +1,29 @@
+Metric,Protocol A,Protocol B
+Dataset Coverage,,
+Countries,"AT, BE, ES, FI, FR","AT, BE, ES, FI, FR"
+Time Period,2018-01-01 to 2024-12-31,2018-01-01 to 2024-12-31
+Frequency,Hourly,Hourly
+Total Stations,38,38
+Train Period,2018-01-08 to 2022-12-31,2018-01-08 to 2022-12-31
+Test Period,2023-01-01 to 2024-12-31,2023-01-08 to 2024-12-31
+,,
+Stations by Country,Protocol A,Protocol B
+Austria,10,10
+Belgium,8,8
+Spain,9,9
+Finland,5,5
+France,6,6
+Total,38,38
+,,
+Stations by Area,Protocol A,Protocol B
+Urban,27,27
+Suburban,9,9
+Rural,1,1
+Rural-nearcity,1,1
+,,
+Test Samples by Horizon,Protocol A,Protocol B
+1h ahead,"606,635","375,906"
+3h ahead,"601,349","374,872"
+6h ahead,"599,587","373,321"
+12h ahead,"597,887","370,219"
+24h ahead,"592,961","364,015"

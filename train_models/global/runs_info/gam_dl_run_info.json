@@ -1,0 +1,43 @@
+{
+  "run_seconds": 5874.44,
+  "tune_train_sample_n": 50000,
+  "tune_val_sample_n": 50000,
+  "param_grid_size": 6,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 339.81,
+      "train_n": 783363,
+      "val_n": 0,
+      "test_n": 375906,
+      "model_path": "models/models_gam_dl/gam_h1.pkl"
+    },
+    "h3": {
+      "train_seconds": 1125.27,
+      "train_n": 781233,
+      "val_n": 0,
+      "test_n": 374872,
+      "model_path": "models/models_gam_dl/gam_h3.pkl"
+    },
+    "h6": {
+      "train_seconds": 1073.59,
+      "train_n": 778038,
+      "val_n": 0,
+      "test_n": 373321,
+      "model_path": "models/models_gam_dl/gam_h6.pkl"
+    },
+    "h12": {
+      "train_seconds": 1046.32,
+      "train_n": 771648,
+      "val_n": 0,
+      "test_n": 370219,
+      "model_path": "models/models_gam_dl/gam_h12.pkl"
+    },
+    "h24": {
+      "train_seconds": 332.49,
+      "train_n": 758868,
+      "val_n": 0,
+      "test_n": 364015,
+      "model_path": "models/models_gam_dl/gam_h24.pkl"
+    }
+  }
+}

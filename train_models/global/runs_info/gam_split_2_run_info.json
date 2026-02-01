@@ -1,0 +1,43 @@
+{
+  "run_seconds": 3650.63,
+  "tune_train_sample_n": 50000,
+  "tune_val_sample_n": 50000,
+  "param_grid_size": 6,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 725.69,
+      "train_n": 1761715,
+      "val_n": 0,
+      "test_n": 152391,
+      "model_path": "models/models_gam_split_2/gam_split_2_h1.pkl"
+    },
+    "h3": {
+      "train_seconds": 707.8,
+      "train_n": 1744264,
+      "val_n": 0,
+      "test_n": 151011,
+      "model_path": "models/models_gam_split_2/gam_split_2_h3.pkl"
+    },
+    "h6": {
+      "train_seconds": 735.3,
+      "train_n": 1739049,
+      "val_n": 0,
+      "test_n": 150539,
+      "model_path": "models/models_gam_split_2/gam_split_2_h6.pkl"
+    },
+    "h12": {
+      "train_seconds": 715.44,
+      "train_n": 1734367,
+      "val_n": 0,
+      "test_n": 150053,
+      "model_path": "models/models_gam_split_2/gam_split_2_h12.pkl"
+    },
+    "h24": {
+      "train_seconds": 683.67,
+      "train_n": 1721000,
+      "val_n": 0,
+      "test_n": 148480,
+      "model_path": "models/models_gam_split_2/gam_split_2_h24.pkl"
+    }
+  }
+}

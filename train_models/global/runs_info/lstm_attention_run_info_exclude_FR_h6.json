@@ -1,0 +1,19 @@
+{
+  "run_seconds": 19632.17,
+  "excluded_country": "FR",
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h6": {
+      "train_seconds": 19589.29,
+      "train_n": 721156,
+      "val_n": 88522,
+      "test_n": 373321,
+      "model_path": "models/lstm_attention_models_exclude_FR/lstm_attention_h6.keras",
+      "history_path": "train_models/history/lstm_attention_histories_exclude_FR/history_h6.csv"
+    }
+  }
+}

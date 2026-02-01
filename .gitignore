@@ -1,0 +1,20 @@
+__pycache__/
+
+venv/
+ml_ready_dataset*.csv
+*.parquet
+
+# Data directory (per-pollutant files)
+data/
+backup*/
+
+# Processed data
+processed_air_quality_data*.csv
+station_train_test_coverage.csv
+stations_full_realistic.csv
+
+
+# Results
+*.joblib
+*.keras
+*.pkl

@@ -1,0 +1,42 @@
+{
+  "h1": {
+    "n_estimators": 200,
+    "min_samples_split": 2,
+    "min_samples_leaf": 2,
+    "max_features": 1.0,
+    "max_depth": 30,
+    "bootstrap": true
+  },
+  "h3": {
+    "n_estimators": 400,
+    "min_samples_split": 5,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "max_depth": null,
+    "bootstrap": true
+  },
+  "h6": {
+    "n_estimators": 200,
+    "min_samples_split": 2,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "max_depth": 40,
+    "bootstrap": true
+  },
+  "h12": {
+    "n_estimators": 200,
+    "min_samples_split": 2,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "max_depth": 40,
+    "bootstrap": true
+  },
+  "h24": {
+    "n_estimators": 200,
+    "min_samples_split": 2,
+    "min_samples_leaf": 4,
+    "max_features": "sqrt",
+    "max_depth": 40,
+    "bootstrap": true
+  }
+}

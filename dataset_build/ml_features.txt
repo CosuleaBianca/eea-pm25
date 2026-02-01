@@ -1,0 +1,104 @@
+# ML Dataset Features
+
+## Metadata
+- Start
+- Country
+- SiteNumber
+- dt_utc
+- dt_local
+
+## Site Metadata (Geographic)
+- Latitude
+- Longitude
+- Altitude
+
+## Site Metadata (Station Type - One-Hot Encoded)
+- StationType_background
+- StationType_industrial
+- StationType_traffic
+
+## Site Metadata (Station Area - One-Hot Encoded)
+- StationArea_rural
+- StationArea_rural-nearcity
+- StationArea_suburban
+- StationArea_urban
+
+## Weather Features (Open-Meteo API)
+- temperature_2m
+- relative_humidity_2m
+- dew_point_2m
+- wind_u
+- wind_v
+- precipitation
+- surface_pressure
+
+## Target Variable
+- PM2.5 (target variable - create y in training scripts as needed)
+
+## Original Features
+- NO2
+- PM10
+
+## Temporal Features
+- hour
+- day_of_week
+- day_of_month
+- month
+- year
+- is_weekend
+- season
+- hour_sin
+- hour_cos
+- month_sin
+- month_cos
+
+## Lag Features
+- NO2_lag_12h
+- NO2_lag_168h
+- NO2_lag_1h
+- NO2_lag_24h
+- NO2_lag_2h
+- NO2_lag_3h
+- NO2_lag_6h
+- PM10_lag_12h
+- PM10_lag_168h
+- PM10_lag_1h
+- PM10_lag_24h
+- PM10_lag_2h
+- PM10_lag_3h
+- PM10_lag_6h
+- PM2.5_lag_12h
+- PM2.5_lag_168h
+- PM2.5_lag_1h
+- PM2.5_lag_24h
+- PM2.5_lag_2h
+- PM2.5_lag_3h
+- PM2.5_lag_6h
+
+## Rolling Mean Features
+- NO2_rolling_mean_12h
+- NO2_rolling_mean_24h
+- NO2_rolling_mean_3h
+- NO2_rolling_mean_6h
+- PM10_rolling_mean_12h
+- PM10_rolling_mean_24h
+- PM10_rolling_mean_3h
+- PM10_rolling_mean_6h
+- PM2.5_rolling_mean_12h
+- PM2.5_rolling_mean_24h
+- PM2.5_rolling_mean_3h
+- PM2.5_rolling_mean_6h
+
+## Rolling Std Features
+- NO2_rolling_std_12h
+- NO2_rolling_std_24h
+- NO2_rolling_std_3h
+- NO2_rolling_std_6h
+- PM10_rolling_std_12h
+- PM10_rolling_std_24h
+- PM10_rolling_std_3h
+- PM10_rolling_std_6h
+- PM2.5_rolling_std_12h
+- PM2.5_rolling_std_24h
+- PM2.5_rolling_std_3h
+- PM2.5_rolling_std_6h

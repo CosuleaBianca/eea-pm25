@@ -1,0 +1,40 @@
+{
+  "run_seconds": 217.75,
+  "per_horizon": {
+    "h1": {
+      "train_seconds": 11.11,
+      "train_n": 783362,
+      "val_n": 0,
+      "test_n": 375906,
+      "model_path": "models/lr_dl_models/lr_h1.pkl"
+    },
+    "h3": {
+      "train_seconds": 11.4,
+      "train_n": 781230,
+      "val_n": 0,
+      "test_n": 374872,
+      "model_path": "models/lr_dl_models/lr_h3.pkl"
+    },
+    "h6": {
+      "train_seconds": 11.21,
+      "train_n": 778032,
+      "val_n": 0,
+      "test_n": 373321,
+      "model_path": "models/lr_dl_models/lr_h6.pkl"
+    },
+    "h12": {
+      "train_seconds": 11.14,
+      "train_n": 771636,
+      "val_n": 0,
+      "test_n": 370219,
+      "model_path": "models/lr_dl_models/lr_h12.pkl"
+    },
+    "h24": {
+      "train_seconds": 11.29,
+      "train_n": 758844,
+      "val_n": 0,
+      "test_n": 364015,
+      "model_path": "models/lr_dl_models/lr_h24.pkl"
+    }
+  }
+}

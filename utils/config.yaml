@@ -1,0 +1,69 @@
+# EEA Air Quality Data Pipeline Configuration
+
+# Cities to download (exact names as they appear in EEA API)
+cities:
+  - country: AT
+    city: Wien
+  - country: FR
+    city: Paris (greater city)
+  - country: ES
+    city: Madrid
+  - country: BE
+    city: Antwerpen
+  - country: FI
+    city: Helsinki / Helsingfors (greater city)
+
+# Date range for downloads
+date_range:
+  start: "2018-01-01"
+  end: "2024-12-31"
+
+# Pollutants to download and process
+# Format: name, code, uri, required
+pollutants:
+  - name: PM2.5
+    code: 6001
+    uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/6001
+    required: true  # PM2.5 is always required for filtering
+  - name: NO2
+    code: 8
+    uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/8
+    required: false
+  # - name: O3
+  #   code: 7
+  #   uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/7
+  #   required: false
+  - name: PM10
+    code: 5
+    uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/5
+    required: false
+  # - name: SO2
+  #   code: 1
+  #   uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/1
+  #   required: false
+  # - name: CO
+  #   code: 10
+  #   uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/10
+  #   required: false
+  # - name: NH3
+  #   code: 35
+  #   uri: http://dd.eionet.europa.eu/vocabulary/aq/pollutant/35
+  #   required: false
+
+# API configuration
+api:
+  base_url: https://eeadmz1-downloads-api-appservice.azurewebsites.net/
+  dataset: 2  # E1a (real-time verified data)
+  aggregation_type: hour
+  chunk_months: 6  # Download in 6-month chunks to avoid API limits
+
+# File paths
+paths:
+  data_dir: data  # Directory for per-pollutant raw files
+  output_dir: dataset_build   # Directory for processed output files
+  processed_file: processed_air_quality_data.csv
+
+# Processing options
+processing:
+  skip_existing_downloads: true  # Skip re-downloading if file exists
+  datetime_format: "%Y-%m-%d %H:%M:%S"

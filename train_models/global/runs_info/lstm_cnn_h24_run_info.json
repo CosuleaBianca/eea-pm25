@@ -1,0 +1,18 @@
+{
+  "run_seconds": 37597.02,
+  "lookback_h": 168,
+  "batch_size": 256,
+  "max_epochs": 50,
+  "learning_rate": 0.0005,
+  "patience": 6,
+  "per_horizon": {
+    "h24": {
+      "train_seconds": 37596.63,
+      "train_n": 758868,
+      "val_n": 97530,
+      "test_n": 364015,
+      "model_path": "models/lstm_cnn_h24_models/lstm_cnn_h24.keras",
+      "history_path": "train_models/history/lstm_cnn_h24_histories/train_curve_h24.csv"
+    }
+  }
+}

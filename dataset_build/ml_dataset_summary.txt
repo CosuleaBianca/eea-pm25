@@ -1,0 +1,10 @@
+# ML Dataset Summary
+
+Total rows: 2,314,608
+Total columns: 81
+Date range: 2018-01-08 00:00:00 to 2024-12-31 22:00:00
+Countries: AT, BE, ES, FI, FR
+Sites: 48
+
+## Missing Values
+No missing values!

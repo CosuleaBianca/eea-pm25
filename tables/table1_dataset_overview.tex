@@ -1,0 +1,39 @@
+\begin{table}[htbp]
+\centering
+\caption{Dataset overview showing geographic coverage, temporal splits, and station counts. Protocol A uses full coverage (all stations with valid features), while Protocol B uses a sequence-eligible subset (stations with continuous 168h windows, gap≤2h).}
+\label{tab:dataset_overview}
+\begin{tabular}{lrrr}
+\toprule
+ & Metric & Protocol A & Protocol B \\
+\midrule
+0 & Dataset Coverage &  &  \\
+1 & Countries & AT, BE, ES, FI, FR & AT, BE, ES, FI, FR \\
+2 & Time Period & 2018-01-01 to 2024-12-31 & 2018-01-01 to 2024-12-31 \\
+3 & Frequency & Hourly & Hourly \\
+4 & Total Stations & 38 & 38 \\
+5 & Train Period & 2018-01-08 to 2022-12-31 & 2018-01-08 to 2022-12-31 \\
+6 & Test Period & 2023-01-01 to 2024-12-31 & 2023-01-08 to 2024-12-31 \\
+7 &  &  &  \\
+8 & Stations by Country & Protocol A & Protocol B \\
+9 & Austria & 10 & 10 \\
+10 & Belgium & 8 & 8 \\
+11 & Spain & 9 & 9 \\
+12 & Finland & 5 & 5 \\
+13 & France & 6 & 6 \\
+14 & Total & 38 & 38 \\
+15 &  &  &  \\
+16 & Stations by Area & Protocol A & Protocol B \\
+17 & Urban & 27 & 27 \\
+18 & Suburban & 9 & 9 \\
+19 & Rural & 1 & 1 \\
+20 & Rural-nearcity & 1 & 1 \\
+21 &  &  &  \\
+22 & Test Samples by Horizon & Protocol A & Protocol B \\
+23 & 1h ahead & 606,635 & 375,906 \\
+24 & 3h ahead & 601,349 & 374,872 \\
+25 & 6h ahead & 599,587 & 373,321 \\
+26 & 12h ahead & 597,887 & 370,219 \\
+27 & 24h ahead & 592,961 & 364,015 \\
+\bottomrule
+\end{tabular}
+\end{table}
