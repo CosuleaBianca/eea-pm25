@@ -6,8 +6,8 @@ This repository contains a complete pipeline for PM2.5 air quality prediction, f
 
 Pre-trained models and processed datasets are available on Hugging Face:
 
-- **Dataset**: [huggingface.co/datasets/cosuleabianca/eea-pm25-dataset](https://huggingface.co/datasets/cosuleabianca/eea-pm25-dataset)
-- **Models**: [huggingface.co/cosuleabianca/eea-pm25-models](https://huggingface.co/cosuleabianca/eea-pm25-models)
+- **Dataset**: [huggingface.co/datasets/cosuleabianca/eea-pm25-dataset](https://huggingface.co/datasets/cosuleabianca/eea-pm25-forecasting)
+- **Models**: [huggingface.co/cosuleabianca/eea-pm25-models](https://huggingface.co/cosuleabianca/eea-pm25)
 
 ## Table of Contents
 
