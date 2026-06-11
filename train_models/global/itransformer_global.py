@@ -1,33 +1,3 @@
-"""
-iTransformer (Liu et al., ICLR 2024) baseline for multi-horizon PM2.5 forecasting.
-
-This is a drop-in modern-DL baseline for Protocol B. It reuses the EXACT data
-pipeline, feature set, per-station normalization, sequence-eligibility rules,
-streaming datasets, metrics, and output conventions of lstm_global_attention.py
-so it is directly comparable in Table 4 / Figs 2,4,5. The ONLY substantive change
-is the model: an inverted Transformer that tokenizes variates (each feature's
-length-L series becomes one token) and applies self-attention ACROSS variates
-(plus a station token), rather than across time steps.
-
-Single-output, one model per horizon, residual-anchored to the last observed
-PM2.5 (consistent with the rest of the DL family).
-
-PARALLELIZATION (deadline-friendly): horizons are independent. Run one horizon
-per machine, then merge:
-
-    # On 5 machines (or 5 GPUs), one each:
-    python train_models/global/itransformer_global.py --horizon 1
-    python train_models/global/itransformer_global.py --horizon 3
-    python train_models/global/itransformer_global.py --horizon 6
-    python train_models/global/itransformer_global.py --horizon 12
-    python train_models/global/itransformer_global.py --horizon 24
-
-    # After collecting all results/itransformer_*_h*.csv back on one machine:
-    python train_models/global/itransformer_global.py --merge
-
-    # Or, single machine, all horizons sequentially:
-    python train_models/global/itransformer_global.py
-"""
 import os
 import json
 import math
