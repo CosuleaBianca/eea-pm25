@@ -18,3 +18,10 @@ stations_full_realistic.csv
 *.joblib
 *.keras
 *.pkl
+
+# data
+cloud/
+docs/
+
+# revision
+revision/

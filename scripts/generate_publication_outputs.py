@@ -12,9 +12,6 @@ This script creates:
 - Figure 4: Station area robustness heatmap
 - Figure 5: Bias analysis (optional)
 - Figure 6: Model skill comparison vs persistence baseline
-
-Author: Generated for PM2.5 forecasting project
-Date: 2026-01-19
 """
 
 import argparse
@@ -53,7 +50,24 @@ MODEL_CONFIGS = {
         'lstm_residual': {'file': 'lstm_residual_singleoutput_aligned_metrics.csv', 'label': 'LSTM-Residual', 'color': '#7f7f7f'},
         'lstm_attention': {'file': 'lstm_attention_metrics.csv', 'label': 'LSTM-Attention', 'color': '#bcbd22'},
         'lstm_cnn': {'file': 'lstm_cnn_metrics.csv', 'label': 'LSTM-CNN', 'color': '#17becf'},
+        'itransformer': {'file': 'itransformer_metrics.csv', 'label': 'iTransformer', 'color': '#393b79'},
     }
+}
+
+# Model family grouping for family-distinct figure styling.
+MODEL_FAMILY = {
+    'persistence': 'baseline', 'lr': 'baseline',
+    'gam': 'statistical',
+    'rf': 'tree', 'xgb': 'tree', 'lgb': 'tree',
+    'lstm_global': 'dl', 'lstm_residual': 'dl', 'lstm_attention': 'dl',
+    'lstm_cnn': 'dl', 'itransformer': 'dl',
+}
+# One line style per family so families are distinguishable even in grayscale.
+FAMILY_LINESTYLE = {
+    'baseline': ':', 'statistical': '-.', 'tree': '--', 'dl': '-',
+}
+FAMILY_MARKER = {
+    'baseline': 'x', 'statistical': 'D', 'tree': 's', 'dl': 'o',
 }
 
 STYLE_CONFIG = {
@@ -293,6 +307,12 @@ def load_coverage_info(coverage_path: str = '../dataset_build/station_train_test
     if verbose:
         print(f"Loading coverage info from {coverage_path}")
 
+    if not Path(coverage_path).exists():
+        # Coverage CSV is a Phase-3 artifact (gitignored) used only by Table 1 (dataset
+        # overview). Degrade gracefully so the rest of the outputs can still be generated.
+        print(f"  NOTE: coverage file not found ({coverage_path}); Table 1 will be skipped.")
+        return None
+
     coverage = pd.read_csv(coverage_path)
 
     if verbose:
@@ -350,7 +370,7 @@ def validate_count_consistency(metrics_dict: Dict[str, pd.DataFrame],
 
     if not inconsistencies:
         if verbose:
-            print("  ✓ All counts are consistent")
+            print("  [OK] All counts are consistent")
     else:
         print(f"\n  Found {len(inconsistencies)} inconsistencies in Protocol {protocol}")
 
@@ -770,6 +790,9 @@ def generate_table2_protocol_a_performance(
     df_formatted = df_table.copy()
     for h in HORIZONS:
         col = f'h={h}'
+        # pandas>=3.0 no longer silently upcasts a float column on string assignment;
+        # cast to object first so the formatted strings can be written in place.
+        df_formatted[col] = df_formatted[col].astype(object)
         # Apply formatting row by row based on Metric
         for idx in df_formatted.index:
             metric = df_formatted.loc[idx, 'Metric']
@@ -942,7 +965,8 @@ def generate_table3_protocol_b_performance(
 
     # Models to include in order
     models_order = ['persistence', 'lr', 'gam', 'rf', 'xgb', 'lgb',
-                    'lstm_global', 'lstm_residual', 'lstm_attention', 'lstm_cnn']
+                    'lstm_global', 'lstm_residual', 'lstm_attention', 'lstm_cnn',
+                    'itransformer']
 
     # Metric names in display order
     metric_names = ['MAE', 'RMSE', 'R²', 'Bias']
@@ -1014,6 +1038,9 @@ def generate_table3_protocol_b_performance(
     df_formatted = df_table.copy()
     for h in HORIZONS:
         col = f'h={h}'
+        # pandas>=3.0 no longer silently upcasts a float column on string assignment;
+        # cast to object first so the formatted strings can be written in place.
+        df_formatted[col] = df_formatted[col].astype(object)
         # Apply formatting row by row based on Metric
         for idx in df_formatted.index:
             metric = df_formatted.loc[idx, 'Metric']
@@ -1266,7 +1293,7 @@ def generate_fig2_performance_vs_horizon(
 
     # Models to show
     models_a = ['persistence', 'gam', 'xgb', 'lgb'] # , 'rf', 'lr'
-    models_b = ['persistence', 'gam', 'xgb', 'lgb', 'lstm_attention', 'lstm_cnn'] # 'rf', 'lr', 'lstm_global', 'lstm_residual'
+    models_b = ['persistence', 'gam', 'xgb', 'lgb', 'lstm_attention', 'lstm_cnn', 'itransformer'] # 'rf', 'lr', 'lstm_global', 'lstm_residual'
 
     # Panel A: Protocol A RMSE
     ax = axes[0, 0]
@@ -1277,8 +1304,11 @@ def generate_fig2_performance_vs_horizon(
         config = MODEL_CONFIGS['protocol_a'][model_key]
         mask = (df['Scope'] == 'Global') & (df['Group'] == 'All')
         global_df = df[mask].sort_values('horizon')
+        fam = MODEL_FAMILY.get(model_key, 'dl')
         ax.plot(global_df['horizon'], global_df['RMSE'],
-               marker='o', label=config['label'], linewidth=2, markersize=6)
+               color=config['color'], linestyle=FAMILY_LINESTYLE[fam],
+               marker=FAMILY_MARKER[fam], label=config['label'],
+               linewidth=2, markersize=6)
 
     ax.set_xlabel('Prediction Horizon (hours)')
     ax.set_ylabel('RMSE (μg/m³)')
@@ -1296,8 +1326,11 @@ def generate_fig2_performance_vs_horizon(
         config = MODEL_CONFIGS['protocol_b'][model_key]
         mask = (df['Scope'] == 'Global') & (df['Group'] == 'All')
         global_df = df[mask].sort_values('horizon')
+        fam = MODEL_FAMILY.get(model_key, 'dl')
         ax.plot(global_df['horizon'], global_df['RMSE'],
-               marker='o', label=config['label'], linewidth=2, markersize=6)
+               color=config['color'], linestyle=FAMILY_LINESTYLE[fam],
+               marker=FAMILY_MARKER[fam], label=config['label'],
+               linewidth=2, markersize=6)
 
     ax.set_xlabel('Prediction Horizon (hours)')
     ax.set_ylabel('RMSE (μg/m³)')
@@ -1315,8 +1348,11 @@ def generate_fig2_performance_vs_horizon(
         config = MODEL_CONFIGS['protocol_a'][model_key]
         mask = (df['Scope'] == 'Global') & (df['Group'] == 'All')
         global_df = df[mask].sort_values('horizon')
+        fam = MODEL_FAMILY.get(model_key, 'dl')
         ax.plot(global_df['horizon'], global_df['MAE'],
-               marker='o', label=config['label'], linewidth=2, markersize=6)
+               color=config['color'], linestyle=FAMILY_LINESTYLE[fam],
+               marker=FAMILY_MARKER[fam], label=config['label'],
+               linewidth=2, markersize=6)
 
     ax.set_xlabel('Prediction Horizon (hours)')
     ax.set_ylabel('MAE (μg/m³)')
@@ -1334,8 +1370,11 @@ def generate_fig2_performance_vs_horizon(
         config = MODEL_CONFIGS['protocol_b'][model_key]
         mask = (df['Scope'] == 'Global') & (df['Group'] == 'All')
         global_df = df[mask].sort_values('horizon')
+        fam = MODEL_FAMILY.get(model_key, 'dl')
         ax.plot(global_df['horizon'], global_df['MAE'],
-               marker='o', label=config['label'], linewidth=2, markersize=6)
+               color=config['color'], linestyle=FAMILY_LINESTYLE[fam],
+               marker=FAMILY_MARKER[fam], label=config['label'],
+               linewidth=2, markersize=6)
 
     ax.set_xlabel('Prediction Horizon (hours)')
     ax.set_ylabel('MAE (μg/m³)')
@@ -1995,9 +2034,9 @@ def main():
     print("\n" + "=" * 80)
     print("SUMMARY")
     print("=" * 80)
-    print(f"✓ Tables saved to: {args.table_dir}/")
-    print(f"✓ Figures saved to: {args.figure_dir}/")
-    print("\n✓ Publication outputs generated successfully!")
+    print(f"[OK] Tables saved to: {args.table_dir}/")
+    print(f"[OK] Figures saved to: {args.figure_dir}/")
+    print("\n[OK] Publication outputs generated successfully!")
     print("=" * 80)
 
 

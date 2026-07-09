@@ -20,13 +20,20 @@ def load_metrics(path: Path, label: str) -> pd.DataFrame:
 
 
 def is_dl_model(path: Path) -> bool:
+    # iTransformer is a Protocol B (sequence) model like the LSTMs, so it must be
+    # scored against the persistence_dl baseline, not the full-coverage persistence.
     name = path.name.lower()
-    return "_dl_" in name or "lstm" in name
+    return "_dl_" in name or "lstm" in name or "itransformer" in name
 
 
 def iter_model_files() -> list:
     files = sorted(RESULTS_DIR.glob("*metrics*.csv"))
-    return [path for path in files if "persistence" not in path.name.lower()]
+    return [
+        path for path in files
+        if "persistence" not in path.name.lower()
+        # skip per-horizon shards (e.g. itransformer_metrics_h1.csv); use the merged file
+        and "_metrics_h" not in path.name.lower()
+    ]
 
 
 def add_skill_columns(model_df: pd.DataFrame, baseline_df: pd.DataFrame) -> pd.DataFrame:

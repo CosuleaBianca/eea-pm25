@@ -25,7 +25,10 @@ def recover_station_area_label(df: pd.DataFrame) -> pd.DataFrame:
 
 def normalize_season_column(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
-    if "season" in df.columns and df["season"].dtype == object:
+    # Map season strings to ints whenever the column is non-numeric. (pandas>=3 reads text
+    # columns as the 'str'/arrow dtype rather than 'object', so a `== object` check misses them
+    # and the later float cast on e.g. 'Winter' fails.)
+    if "season" in df.columns and not pd.api.types.is_numeric_dtype(df["season"]):
         season_map = {"Winter": 0, "Spring": 1, "Summer": 2, "Autumn": 3, "Fall": 3}
         df["season"] = df["season"].map(season_map)
     if "season" in df.columns:
